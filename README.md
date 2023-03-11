@@ -93,3 +93,17 @@ Finally, add the web resource to a form in Dynamics. Publish the changes.
 Unfortunately, MSAL throws an error message in this situation:
 
 BrowserAuthError: redirect_in_iframe: Redirects are not supported for iframed or brokered applications. Please ensure you are using MSAL.js in a top frame of the window if using the redirect APIs, or use the popup APIs. (window.parent !== window) => true
+
+Switching to popups solves this problem - Internet Explorer likely won't work because of [known issues](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/internet-explorer.md).
+
+### Useful links
+
+https://www.inogic.com/blog/2019/01/using-angular-in-dynamics-365-part-i/
+https://github.com/kip-dk/angular-xrm-webresource
+https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/initialization.md
+https://stackoverflow.com/questions/64390368/using-msal-for-auth-authz-in-a-dynamics-365-resource-to-access-external-azure-ap
+https://johnstonsoftwaresolutions.com/2019/02/24/deep-dive-authenticating-for-using-microsoft-graph-api-inside-microsoft-dynamics-365-customer-experience-i-e-micorosoft-dynamics-crm/
+https://learn.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-angular-auth-code
+https://www.npmjs.com/package/dynamics-web-api?activeTab=readme#configuration
+https://github.com/kip-dk/angular-xrmservice
+https://community.dynamics.com/crm/b/scaleablesolutionsblog/posts/web-api-authentication-from-javascript

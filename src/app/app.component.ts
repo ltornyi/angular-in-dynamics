@@ -27,11 +27,11 @@ export class AppComponent {
   }
 
   login() {
-    this.authService.loginRedirect();
+    this.authService.loginPopup();
   }
 
   logout() {
-    this.authService.logoutRedirect({
+    this.authService.logoutPopup({
       postLogoutRedirectUri: environment.msalRedirectUri
     });
   }
