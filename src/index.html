@@ -3,10 +3,26 @@
 <head>
   <meta charset="utf-8">
   <title>AngularInDynamics</title>
-  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <app-root></app-root>
+  <app-redirect></app-redirect>
+  <script>
+    document["ANG_BASE_HREF"] = "/";
+    var url = window.location.href;
+    if (url.toLowerCase().indexOf('webresources') >= 0) {
+      var spl = url.split('?')[0].split('/');
+      if (spl.length > 3) {
+        url = '/';
+        for (var i = 3; i < (spl.length); i++) {
+          if (spl[i] != null && spl[i] != '') {
+            url += spl[i] + '/'
+          }
+        }
+        document["ANG_BASE_HREF"] = url;
+      }
+    }
+  </script>
 </body>
 </html>

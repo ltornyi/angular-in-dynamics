@@ -1,5 +1,15 @@
-<div role="main">
-  <span>App component works</span>
-</div>
+<div class="container">
+  <div role="main">
+    <span>App component works</span>
+    <button *ngIf="!loggedOn" (click)="login()">Login</button>
+    <button *ngIf="loggedOn" (click)="logout()">Logout</button>
+    <nav *ngIf="loggedOn" >
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active" >Home</a></li>
+        <li><a routerLink="/other" routerLinkActive="active">Other Component</a></li>
+      </ul>
+    </nav>
+  </div>
 
-<router-outlet></router-outlet>
+  <router-outlet *ngIf="loggedOn"></router-outlet>
+</div>
